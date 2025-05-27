@@ -7,7 +7,8 @@ const NavBar = () => {
 
   return (
     <nav>
-      <Link to="/">Home</Link> | <Link to="/shop">Shop</Link> | 🛒Cart: {totalItems}
+      <Link to="/">Home</Link> | <Link to="/shop">Shop</Link> |{' '}
+      <Link to="./checkout">🛒Cart: {totalItems}</Link>
     </nav>
   );
 };
