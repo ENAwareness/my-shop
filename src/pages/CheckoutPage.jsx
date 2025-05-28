@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 
 const CheckoutPage = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, removeFromCart } = useContext(CartContext);
 
   const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
@@ -18,6 +18,7 @@ const CheckoutPage = () => {
               <li key={item.id}>
                 <strong>{item.title}</strong>-{item.quantity}*${item.price.toFixed(2)}=
                 <strong>${(item.quantity * item.price).toFixed(2)}</strong>
+                <button onClick={() => removeFromCart(item.id)}>Remove</button>
               </li>
             ))}
           </ul>
