@@ -7,7 +7,7 @@ const CheckoutPage = () => {
   const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <div>
+    <div className="checkout-container">
       <h1>Cart / Checkout</h1>
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
